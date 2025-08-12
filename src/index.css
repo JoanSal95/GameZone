@@ -1,0 +1,1494 @@
+/* Estilos personalizados para complementar Bootstrap */
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  --hover-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  --border-radius: 12px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navegación personalizada */
+.custom-navbar {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.brand-logo {
+  font-size: 1.8rem !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  color: #FFD700 !important; /* Color dorado para mejor visibilidad */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mayor contraste */
+  transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+  color: #FFF200 !important; /* Color amarillo brillante al hacer hover */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  margin: 0 5px;
+  padding: 8px 16px !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+/* Hero Section */
+.hero-section {
+  background: var(--primary-gradient);
+  border-radius: var(--border-radius);
+  margin: 20px;
+}
+
+/* Cards personalizadas */
+.game-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--border-radius) !important;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow) !important;
+}
+
+/* Overlay para cards de juegos */
+.card-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--border-radius);
+}
+
+.game-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* Botones personalizados */
+.btn {
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Efectos para imágenes */
+.card-img-top {
+  transition: transform 0.3s ease;
+  border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+}
+
+.game-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Animación para spinner */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out;
+  border-radius: var(--border-radius) !important;
+  border: none !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+/* Badges personalizados */
+.badge {
+  font-weight: 500;
+}
+
+/* Formularios */
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Alertas */
+.alert {
+  border-radius: var(--border-radius);
+  border: none;
+}
+
+/* Paginación */
+.pagination {
+  --bs-pagination-border-radius: 20px;
+}
+
+.page-link {
+  border-radius: 20px !important;
+  margin: 0 2px;
+  border: none;
+  color: #667eea;
+}
+
+.page-link:hover {
+  background-color: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.page-item.active .page-link {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+/* Estilos responsivos adicionales */
+@media (max-width: 768px) {
+  .hero-section {
+    margin: 10px;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Animaciones suaves */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Mejoras para accesibilidad */
+.btn:focus,
+.form-control:focus,
+.nav-link:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Sombras personalizadas para diferentes elementos */
+.shadow-custom {
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Efectos hover para enlaces */
+a:not(.btn):not(.nav-link) {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:not(.btn):not(.nav-link):hover {
+  color: #5a6fd8;
+  text-decoration: underline;
+}
+
+/* Estilos para precios */
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.price-with-discount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.discount-badge {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.original-price {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.final-price {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.price-badge {
+  font-weight: bold;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+/* Estilos para precios en diferentes tamaños */
+.price-container.fs-5 .final-price {
+  font-size: 1.25rem;
+  padding: 8px 16px;
+}
+
+.price-container.fs-5 .original-price {
+  font-size: 1rem;
+}
+
+.price-container.fs-5 .discount-badge {
+  font-size: 0.9rem;
+  padding: 4px 8px;
+}
+
+.price-container.small .final-price {
+  font-size: 0.85rem;
+  padding: 4px 8px;
+}
+
+.price-container.small .original-price {
+  font-size: 0.75rem;
+}
+
+.price-container.small .discount-badge {
+  font-size: 0.7rem;
+  padding: 2px 4px;
+}
+
+/* Efectos hover para botones de compra */
+.btn-success:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* Mejoras visuales para las cards con precios */
+.game-card .card-body {
+  transition: all 0.3s ease;
+}
+
+.game-card:hover .price-container {
+  transform: scale(1.05);
+}
+
+/* Estilos para el área de precio prominente en detalles */
+.bg-light.rounded {
+  border: 2px solid #e9ecef;
+  transition: border-color 0.3s ease;
+}
+
+.bg-light.rounded:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+/* Estilos mejorados para títulos GameZone */
+.gamezone-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+/* Fallback para navegadores que no soportan background-clip */
+@supports not (-webkit-background-clip: text) {
+  .gamezone-title {
+    color: #667eea !important;
+    -webkit-text-fill-color: initial;
+  }
+}
+
+/* Página de Juegos */
+.games-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.games-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.games-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.games-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Sección de búsqueda */
+.search-section {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.search-button, .clear-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-button {
+  background-color: #667eea;
+  color: white;
+}
+
+.search-button:hover {
+  background-color: #5a6fd8;
+}
+
+.clear-button {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.clear-button:hover {
+  background-color: #ff5252;
+}
+
+/* Estilos para el selector de ordenamiento */
+.sort-section {
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sort-section .form-select {
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.sort-section .form-select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+.sort-section .form-select option {
+  padding: 8px;
+}
+
+/* Responsive para la sección de ordenamiento */
+@media (max-width: 768px) {
+  .sort-section .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .sort-section .d-flex .d-flex {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .sort-section .form-select {
+    min-width: 100% !important;
+  }
+}
+
+/* Información de juegos */
+.games-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.game-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.game-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image img {
+  transform: scale(1.05);
+}
+
+.game-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-card:hover .game-overlay {
+  opacity: 1;
+}
+
+.play-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background: #5a6fd8;
+  transform: scale(1.05);
+}
+
+.game-content {
+  padding: 1.5rem;
+}
+
+.game-content h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.game-genres {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.game-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.game-rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.game-platforms {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.platform-badge {
+  background: #f0f0f0;
+  color: #666;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+}
+
+.release-date {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Loading y error states */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 8px;
+  color: #c53030;
+}
+
+.retry-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: #5a6fd8;
+}
+
+.pagination-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  color: #666;
+  font-weight: bold;
+}
+
+/* Estilos para la página Home actualizados */
+.recent-games .games-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.game-preview {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.game-preview:hover {
+  transform: translateY(-5px);
+}
+
+.game-preview .game-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.game-preview .game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-preview .game-info {
+  padding: 1.5rem;
+}
+
+.game-preview .game-info h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.game-preview .game-info p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.view-all-games {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-all-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.view-all-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Página de detalles del juego */
+.game-detail-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.back-button {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background: #5a6fd8;
+}
+
+.game-detail-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.game-detail-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.game-detail-info h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.game-meta-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.game-meta-info > div {
+  margin-bottom: 1rem;
+}
+
+.game-meta-info > div:last-child {
+  margin-bottom: 0;
+}
+
+.rating-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rating-badge.large {
+  padding: 8px 16px;
+  font-size: 1.1rem;
+  border-radius: 20px;
+}
+
+.rating-count {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.game-genres, .game-platforms {
+  margin-bottom: 1.5rem;
+}
+
+.game-genres strong, .game-platforms strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.genres-list, .platforms-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.genre-tag, .platform-tag {
+  background: #667eea;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.platform-tag {
+  background: #28a745;
+}
+
+.game-description {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
+}
+
+.game-description h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.game-description p {
+  line-height: 1.8;
+  color: #555;
+}
+
+.game-screenshots {
+  margin-bottom: 3rem;
+}
+
+.game-screenshots h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.screenshots-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.screenshots-grid img:hover {
+  transform: scale(1.05);
+}
+
+.game-tags {
+  margin-bottom: 3rem;
+}
+
+.game-tags h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #f0f0f0;
+  color: #666;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.game-links {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.website-link {
+  display: inline-block;
+  background: #28a745;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.website-link:hover {
+  background: #218838;
+}
+
+/* Responsive para detalles del juego */
+@media (max-width: 768px) {
+  .game-detail-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .game-detail-info h1 {
+    font-size: 2rem;
+  }
+  
+  .screenshots-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Página Acerca de */
+.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.about-content ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.about-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Estilos mejorados para la página About */
+.tech-item {
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* Animaciones para las cards de About */
+.about-page .card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.about-page .card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.about-page .card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para badges en la página About */
+.about-page .badge {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+}
+
+/* Mejoras para la sección de tecnologías */
+.tech-item .display-6 {
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+/* Página de Contacto */
+.contact-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.contact-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-info h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.contact-form h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+button[type="submit"] {
+  background-color: #667eea;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #5a6fd8;
+}
+
+/* Página 404 */
+.not-found-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.not-found-content {
+  text-align: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.not-found-content h1 {
+  font-size: 6rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+.not-found-content h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.not-found-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.home-button,
+.games-button {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.home-button {
+  background-color: #667eea;
+  color: white;
+}
+
+.games-button {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.home-button:hover,
+.games-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Estilos para el botón del carrito */
+.cart-button {
+  position: relative;
+  border-radius: 25px !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 8px 16px !important;
+}
+
+.cart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.cart-button .badge {
+  animation: cartBounce 0.5s ease-out;
+}
+
+@keyframes cartBounce {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Estilos para el botón de wishlist */
+.wishlist-button {
+  position: relative;
+  border-radius: 25px !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 8px 16px !important;
+}
+
+.wishlist-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.wishlist-button .badge {
+  animation: wishlistBounce 0.5s ease-out;
+}
+
+@keyframes wishlistBounce {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .features-grid,
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ========================================
+   FOOTER STYLES - MINIMALISTA
+   ======================================== */
+
+/* Footer layout */
+footer {
+  margin-top: auto;
+  background: #343a40 !important;
+  border-top: 1px solid #495057;
+  color: #f8f9fa !important; /* Color más claro para el texto base */
+}
+
+/* Footer text colors */
+footer .text-muted {
+  color: #dee2e6 !important; /* Cambiar de gris oscuro a gris claro */
+}
+
+.footer-link {
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  color: #e9ecef !important; /* Color más claro para los enlaces */
+}
+
+.footer-link:hover {
+  color: #ffc107 !important;
+  text-decoration: none;
+}
+
+/* Social Media Buttons - Minimalista */
+.social-btn-simple {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid #6c757d;
+  padding: 0;
+  color: #e9ecef !important; /* Color más claro para los iconos */
+}
+
+.social-btn-simple:hover {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529 !important;
+  transform: translateY(-1px);
+}
+
+/* Footer brand styling */
+footer .brand-logo {
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  color: #FFD700 !important;
+}
+
+/* Separador más claro */
+footer .text-muted:not(.footer-link) {
+  color: #adb5bd !important; /* Color más claro para separadores y copyright */
+}
+
+/* Layout adjustments para asegurar que el footer esté en la parte inferior */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Footer responsive adjustments */
+@media (max-width: 768px) {
+  footer .d-flex {
+    flex-direction: column;
+    gap: 1rem !important;
+  }
+  
+  footer .justify-content-md-end {
+    justify-content: center !important;
+  }
+  
+  .social-btn-simple {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ========================================
+   GAMES CAROUSEL STYLES
+   ======================================== */
+
+.games-carousel {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.games-carousel .carousel-indicators {
+  bottom: -40px;
+}
+
+.games-carousel .carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 6px;
+  background-color: #667eea;
+  border: none;
+  opacity: 0.5;
+}
+
+.games-carousel .carousel-indicators .active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.carousel-game-card {
+  min-height: 400px;
+  background: white;
+}
+
+.carousel-image-container {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.carousel-game-card:hover .carousel-image {
+  transform: scale(1.05);
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.rating-badge {
+  align-self: flex-end;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #333 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.popularity-indicator {
+  align-self: flex-start;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 12px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.game-rank .badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.game-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.game-genres {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.game-description {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.price-section {
+  transform: scale(1.1);
+  transform-origin: left center;
+}
+
+.carousel-actions .btn {
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+}
+
+.carousel-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* CTA Section */
+.cta-section {
+  border: 2px dashed #667eea;
+  transition: all 0.3s ease;
+}
+
+.cta-section:hover {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  border-color: #5a6fd8;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments for carousel */
+@media (max-width: 768px) {
+  .carousel-game-card {
+    min-height: auto;
+  }
+  
+  .carousel-image-container {
+    height: 250px;
+  }
+  
+  .game-title {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-content {
+    min-height: auto;
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .carousel-actions {
+    flex-direction: column;
+  }
+  
+  .carousel-actions .btn {
+    margin-bottom: 0.5rem;
+  }
+  
+  .games-carousel .carousel-indicators {
+    bottom: -30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-image-container {
+    height: 200px;
+  }
+  
+  .game-title {
+    font-size: 1.25rem;
+  }
+  
+  .carousel-content {
+    padding: 1.5rem 1rem !important;
+  }
+}
