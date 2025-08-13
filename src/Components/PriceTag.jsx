@@ -15,7 +15,7 @@ const PriceTag = ({ game, size = 'normal' }) => {
 
   const sizeClass = size === 'large' ? 'fs-5' : size === 'small' ? 'small' : ''
 
-  // Todos los juegos tienen precio ahora
+  
   return (
     <div className={`price-container ${sizeClass}`}>
       {discount ? (

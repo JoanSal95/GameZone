@@ -5,7 +5,7 @@ export const CartContext = createContext()
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([])
 
-  // Cargar carrito desde localStorage al iniciar
+  
   useEffect(() => {
     const savedCart = localStorage.getItem('gameZoneCart')
     if (savedCart) {
@@ -13,15 +13,15 @@ export const CartProvider = ({ children }) => {
     }
   }, [])
 
-  // Guardar carrito en localStorage cuando cambie
+  
   useEffect(() => {
     localStorage.setItem('gameZoneCart', JSON.stringify(cartItems))
   }, [cartItems])
 
-  // Función para generar precio consistente del juego
+  
   const getGamePrice = (game) => {
     if (!game || typeof game !== 'object') {
-      return 19.99 // Precio por defecto si no hay juego
+      return 19.99 
     }
     
     const basePrice = 15.99
@@ -32,9 +32,9 @@ export const CartProvider = ({ children }) => {
     const currentYear = new Date().getFullYear()
     const ageMultiplier = Math.max(0.4, 1 - (currentYear - releaseYear) * 0.08)
     
-    // Usar el ID del juego para generar un valor pseudoaleatorio pero consistente
+    
     const gameId = game.id || 1
-    const pseudoRandom = (gameId * 9301 + 49297) % 233280 / 233280 // Generador pseudoaleatorio
+    const pseudoRandom = (gameId * 9301 + 49297) % 233280 / 233280 
     
     let finalPrice = basePrice * ratingMultiplier * popularityMultiplier * ageMultiplier
     
@@ -46,10 +46,10 @@ export const CartProvider = ({ children }) => {
     return Math.max(5, Math.min(finalPrice, 79.99))
   }
 
-  // Función para obtener descuento consistente
+  
   const getGameDiscount = (game) => {
     if (!game || typeof game !== 'object') {
-      return null // Sin descuento si no hay juego válido
+      return null 
     }
     
     const gameId = game.id || 0
@@ -61,10 +61,10 @@ export const CartProvider = ({ children }) => {
     return discountPercentages[discountIndex]
   }
 
-  // Calcular precio final con descuento
+  
   const getFinalPrice = (game) => {
     if (!game || typeof game !== 'object') {
-      return 19.99 // Precio por defecto si no hay juego válido
+      return 19.99 
     }
     
     const originalPrice = getGamePrice(game)
@@ -78,31 +78,31 @@ export const CartProvider = ({ children }) => {
     return originalPrice
   }
 
-  // Agregar juego al carrito
+  
   const addToCart = (game, quantity = 1) => {
     setCartItems(prevItems => {
       const existingItem = prevItems.find(item => item.game.id === game.id)
       
       if (existingItem) {
-        // Si ya existe, aumentar cantidad
+        
         return prevItems.map(item =>
           item.game.id === game.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         )
       } else {
-        // Si no existe, agregar nuevo item
+        
         return [...prevItems, { game, quantity, price: getFinalPrice(game) }]
       }
     })
   }
 
-  // Remover juego del carrito
+  
   const removeFromCart = (gameId) => {
     setCartItems(prevItems => prevItems.filter(item => item.game.id !== gameId))
   }
 
-  // Actualizar cantidad
+  
   const updateQuantity = (gameId, newQuantity) => {
     if (newQuantity <= 0) {
       removeFromCart(gameId)
@@ -117,29 +117,29 @@ export const CartProvider = ({ children }) => {
     }
   }
 
-  // Limpiar carrito
+  
   const clearCart = () => {
     setCartItems([])
   }
 
-  // Obtener total del carrito
+  
   const getCartTotal = () => {
     return cartItems.reduce((total, item) => {
       return total + (item.price * item.quantity)
     }, 0)
   }
 
-  // Obtener cantidad total de items
+  
   const getCartItemsCount = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0)
   }
 
-  // Verificar si un juego está en el carrito
+  
   const isInCart = (gameId) => {
     return cartItems.some(item => item.game.id === gameId)
   }
 
-  // Obtener cantidad de un juego específico
+  
   const getGameQuantity = (gameId) => {
     const item = cartItems.find(item => item.game.id === gameId)
     return item ? item.quantity : 0

@@ -48,9 +48,9 @@ const Navigation = () => {
               </Nav.Link>
             </Nav>
             
-            {/* Botones de wishlist y carrito */}
+            {}
             <div className="d-flex gap-2">
-              {/* Botón de lista de deseos */}
+              {}
               <Button 
                 as={Link}
                 to="/wishlist"
@@ -69,7 +69,7 @@ const Navigation = () => {
                 )}
               </Button>
 
-              {/* Botón del carrito */}
+              {}
               <Button 
                 variant="outline-warning" 
                 onClick={handleCartToggle}
@@ -91,7 +91,7 @@ const Navigation = () => {
         </Container>
       </Navbar>
 
-      {/* Componente del carrito offcanvas */}
+      {}
       <ShoppingCart show={showCart} handleClose={handleCartClose} />
     </>
   )

@@ -1,14 +1,11 @@
-// Servicio para interactuar con la API de RAWG
 const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
 const BASE_URL = 'https://api.rawg.io/api';
 
-// Verificar que la API key esté configurada
 if (!API_KEY) {
   console.error('⚠️ VITE_RAWG_API_KEY no está configurada. Por favor revisa tu archivo .env');
 }
 
 export const gamesAPI = {
-  // Obtener juegos populares
   getPopularGames: async () => {
     try {
       const response = await fetch(
@@ -27,7 +24,6 @@ export const gamesAPI = {
     }
   },
 
-  // Obtener todos los juegos con paginación
   getAllGames: async (page = 1) => {
     try {
       const response = await fetch(
@@ -56,7 +52,6 @@ export const gamesAPI = {
     }
   },
 
-  // Buscar juegos por nombre
   searchGames: async (query) => {
     try {
       const response = await fetch(
@@ -75,7 +70,6 @@ export const gamesAPI = {
     }
   },
 
-  // Obtener detalles de un juego específico
   getGameDetails: async (id) => {
     try {
       const response = await fetch(
@@ -95,7 +89,6 @@ export const gamesAPI = {
   }
 };
 
-// Función utilitaria para formatear la fecha de lanzamiento
 export const formatReleaseDate = (dateString) => {
   if (!dateString) return 'Fecha no disponible';
   
@@ -107,64 +100,53 @@ export const formatReleaseDate = (dateString) => {
   });
 };
 
-// Función utilitaria para obtener el color del rating
 export const getRatingColor = (rating) => {
-  if (rating >= 4.5) return '#4caf50'; // Verde
-  if (rating >= 4.0) return '#8bc34a'; // Verde claro
-  if (rating >= 3.5) return '#ffeb3b'; // Amarillo
-  if (rating >= 3.0) return '#ff9800'; // Naranja
-  return '#f44336'; // Rojo
+  if (rating >= 4.5) return '#4caf50';
+  if (rating >= 4.0) return '#8bc34a';
+  if (rating >= 3.5) return '#ffeb3b';
+  if (rating >= 3.0) return '#ff9800';
+  return '#f44336';
 };
 
-// Función utilitaria para generar precios simulados basados en el rating y popularidad
 export const generatePrice = (game) => {
-  // Generar precio basado en rating, fecha de lanzamiento y popularidad
-  const basePrice = 15.99; // Precio base aumentado
+  const basePrice = 15.99;
   const ratingMultiplier = game.rating ? (game.rating / 5) : 0.7;
   const popularityMultiplier = game.ratings_count ? Math.min(game.ratings_count / 1000, 3) : 1;
   
-  // Juegos más nuevos tienden a ser más caros
   const releaseYear = game.released ? new Date(game.released).getFullYear() : 2020;
   const currentYear = new Date().getFullYear();
   const ageMultiplier = Math.max(0.4, 1 - (currentYear - releaseYear) * 0.08);
   
-  // Usar el ID del juego para generar un valor pseudoaleatorio pero consistente
   const gameId = game.id || 1;
-  const pseudoRandom = (gameId * 9301 + 49297) % 233280 / 233280; // Generador pseudoaleatorio
+  const pseudoRandom = (gameId * 9301 + 49297) % 233280 / 233280;
   
-  // Calcular precio final
   let finalPrice = basePrice * ratingMultiplier * popularityMultiplier * ageMultiplier;
   
-  // Redondear a precios realistas con mínimo $5.00
-  if (finalPrice < 5) finalPrice = 5 + pseudoRandom * 5; // Entre $5-$10
+  if (finalPrice < 5) finalPrice = 5 + pseudoRandom * 5;
   else if (finalPrice < 15) finalPrice = Math.ceil(finalPrice);
-  else if (finalPrice < 35) finalPrice = Math.ceil(finalPrice / 5) * 5; // Múltiplos de 5
-  else finalPrice = Math.ceil(finalPrice / 10) * 10; // Múltiplos de 10
+  else if (finalPrice < 35) finalPrice = Math.ceil(finalPrice / 5) * 5;
+  else finalPrice = Math.ceil(finalPrice / 10) * 10;
   
-  return Math.max(5, Math.min(finalPrice, 79.99)); // Mínimo $5, máximo $79.99
+  return Math.max(5, Math.min(finalPrice, 79.99));
 };
 
-// Función utilitaria para formatear el precio
 export const formatPrice = (price) => {
   return `$${price.toFixed(2)}`;
 };
 
-// Función utilitaria para obtener el descuento simulado
 export const getDiscount = (game) => {
-  // Algunos juegos tendrán descuentos basados en su ID (consistente)
   const gameId = game.id || 0;
-  const hasDiscount = (gameId % 10) < 3; // 30% de los juegos tendrán descuento
+  const hasDiscount = (gameId % 10) < 3;
   if (!hasDiscount) return null;
   
   const discountPercentages = [10, 15, 20, 25, 30, 40, 50, 75];
-  const discountIndex = gameId % discountPercentages.length; // Consistente basado en ID
+  const discountIndex = gameId % discountPercentages.length;
   
   return discountPercentages[discountIndex];
 };
 
-// Función utilitaria para calcular precio con descuento
 export const calculateDiscountedPrice = (originalPrice, discountPercent) => {
   if (!discountPercent) return originalPrice;
   const discountedPrice = originalPrice * (1 - discountPercent / 100);
-  return Math.max(5, discountedPrice); // Asegurar que el precio con descuento no baje de $5
+  return Math.max(5, discountedPrice);
 };

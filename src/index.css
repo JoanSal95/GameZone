@@ -1,4 +1,3 @@
-/* Estilos personalizados para complementar Bootstrap */
 :root {
   --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -11,7 +10,6 @@ body {
   background-color: #f8f9fa;
 }
 
-/* Navegación personalizada */
 .custom-navbar {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -21,13 +19,13 @@ body {
   font-size: 1.8rem !important;
   font-weight: bold !important;
   text-decoration: none !important;
-  color: #FFD700 !important; /* Color dorado para mejor visibilidad */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mayor contraste */
+  color: #FFD700 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 }
 
 .brand-logo:hover {
-  color: #FFF200 !important; /* Color amarillo brillante al hacer hover */
+  color: #FFF200 !important;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
   transform: scale(1.05);
 }
@@ -46,14 +44,14 @@ body {
   color: white !important;
 }
 
-/* Hero Section */
+
 .hero-section {
   background: var(--primary-gradient);
   border-radius: var(--border-radius);
   margin: 20px;
 }
 
-/* Cards personalizadas */
+
 .game-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: var(--border-radius) !important;
@@ -64,7 +62,7 @@ body {
   box-shadow: var(--hover-shadow) !important;
 }
 
-/* Overlay para cards de juegos */
+
 .card-overlay {
   background: rgba(0, 0, 0, 0.7);
   opacity: 0;
@@ -76,7 +74,7 @@ body {
   opacity: 1;
 }
 
-/* Botones personalizados */
+
 .btn {
   border-radius: 20px;
   font-weight: 500;
@@ -87,7 +85,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Efectos para imágenes */
+
 .card-img-top {
   transition: transform 0.3s ease;
   border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
@@ -97,7 +95,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Animación para spinner */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -110,12 +108,12 @@ body {
   box-shadow: var(--card-shadow) !important;
 }
 
-/* Badges personalizados */
+
 .badge {
   font-weight: 500;
 }
 
-/* Formularios */
+
 .form-control {
   border-radius: 10px;
   border: 2px solid #e9ecef;
@@ -127,13 +125,13 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
 }
 
-/* Alertas */
+
 .alert {
   border-radius: var(--border-radius);
   border: none;
 }
 
-/* Paginación */
+
 .pagination {
   --bs-pagination-border-radius: 20px;
 }
@@ -156,7 +154,7 @@ body {
   border-color: #667eea;
 }
 
-/* Estilos responsivos adicionales */
+
 @media (max-width: 768px) {
   .hero-section {
     margin: 10px;
@@ -171,12 +169,12 @@ body {
   }
 }
 
-/* Animaciones suaves */
+
 * {
   transition: all 0.3s ease;
 }
 
-/* Mejoras para accesibilidad */
+
 .btn:focus,
 .form-control:focus,
 .nav-link:focus {
@@ -184,12 +182,12 @@ body {
   outline-offset: 2px;
 }
 
-/* Sombras personalizadas para diferentes elementos */
+
 .shadow-custom {
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2) !important;
 }
 
-/* Efectos hover para enlaces */
+
 a:not(.btn):not(.nav-link) {
   color: #667eea;
   text-decoration: none;
@@ -201,7 +199,7 @@ a:not(.btn):not(.nav-link):hover {
   text-decoration: underline;
 }
 
-/* Estilos para precios */
+
 .price-container {
   display: flex;
   flex-direction: column;
@@ -243,7 +241,7 @@ a:not(.btn):not(.nav-link):hover {
   font-size: 0.9rem;
 }
 
-/* Estilos para precios en diferentes tamaños */
+
 .price-container.fs-5 .final-price {
   font-size: 1.25rem;
   padding: 8px 16px;
@@ -272,13 +270,13 @@ a:not(.btn):not(.nav-link):hover {
   padding: 2px 4px;
 }
 
-/* Efectos hover para botones de compra */
+
 .btn-success:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
 }
 
-/* Mejoras visuales para las cards con precios */
+
 .game-card .card-body {
   transition: all 0.3s ease;
 }
@@ -287,7 +285,7 @@ a:not(.btn):not(.nav-link):hover {
   transform: scale(1.05);
 }
 
-/* Estilos para el área de precio prominente en detalles */
+
 .bg-light.rounded {
   border: 2px solid #e9ecef;
   transition: border-color 0.3s ease;
@@ -298,7 +296,7 @@ a:not(.btn):not(.nav-link):hover {
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
 }
 
-/* Estilos mejorados para títulos GameZone */
+
 .gamezone-title {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -308,7 +306,7 @@ a:not(.btn):not(.nav-link):hover {
   text-shadow: none;
 }
 
-/* Fallback para navegadores que no soportan background-clip */
+
 @supports not (-webkit-background-clip: text) {
   .gamezone-title {
     color: #667eea !important;
@@ -316,7 +314,7 @@ a:not(.btn):not(.nav-link):hover {
   }
 }
 
-/* Página de Juegos */
+
 .games-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -338,7 +336,7 @@ a:not(.btn):not(.nav-link):hover {
   color: #666;
 }
 
-/* Sección de búsqueda */
+
 .search-section {
   margin-bottom: 2rem;
   display: flex;
@@ -393,7 +391,7 @@ a:not(.btn):not(.nav-link):hover {
   background-color: #ff5252;
 }
 
-/* Estilos para el selector de ordenamiento */
+
 .sort-section {
   background: rgba(102, 126, 234, 0.05);
   border-radius: 10px;
@@ -417,7 +415,7 @@ a:not(.btn):not(.nav-link):hover {
   padding: 8px;
 }
 
-/* Responsive para la sección de ordenamiento */
+
 @media (max-width: 768px) {
   .sort-section .d-flex {
     flex-direction: column;
@@ -435,7 +433,7 @@ a:not(.btn):not(.nav-link):hover {
   }
 }
 
-/* Información de juegos */
+
 .games-info {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -571,7 +569,7 @@ a:not(.btn):not(.nav-link):hover {
   font-size: 0.85rem;
 }
 
-/* Loading y error states */
+
 .loading-spinner {
   display: flex;
   flex-direction: column;
@@ -614,7 +612,7 @@ a:not(.btn):not(.nav-link):hover {
   margin-top: 1rem;
 }
 
-/* Paginación */
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -647,7 +645,7 @@ a:not(.btn):not(.nav-link):hover {
   font-weight: bold;
 }
 
-/* Estilos para la página Home actualizados */
+
 .recent-games .games-preview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -715,7 +713,7 @@ a:not(.btn):not(.nav-link):hover {
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* Página de detalles del juego */
+
 .game-detail-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -906,7 +904,7 @@ a:not(.btn):not(.nav-link):hover {
   background: #218838;
 }
 
-/* Responsive para detalles del juego */
+
 @media (max-width: 768px) {
   .game-detail-header {
     grid-template-columns: 1fr;
@@ -922,7 +920,7 @@ a:not(.btn):not(.nav-link):hover {
   }
 }
 
-/* Página Acerca de */
+
 .about-page {
   max-width: 800px;
   margin: 0 auto;
@@ -952,7 +950,7 @@ a:not(.btn):not(.nav-link):hover {
   margin-bottom: 0.5rem;
 }
 
-/* Estilos mejorados para la página About */
+
 .tech-item {
   padding: 1rem;
   border-radius: 10px;
@@ -968,7 +966,7 @@ a:not(.btn):not(.nav-link):hover {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
 }
 
-/* Animaciones para las cards de About */
+
 .about-page .card {
   animation: fadeInUp 0.6s ease-out;
 }
@@ -992,18 +990,18 @@ a:not(.btn):not(.nav-link):hover {
   }
 }
 
-/* Estilos para badges en la página About */
+
 .about-page .badge {
   font-size: 0.8rem;
   padding: 6px 12px;
 }
 
-/* Mejoras para la sección de tecnologías */
+
 .tech-item .display-6 {
   filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
 }
 
-/* Página de Contacto */
+
 .contact-page {
   max-width: 800px;
   margin: 0 auto;
@@ -1076,7 +1074,7 @@ button[type="submit"]:hover {
   background-color: #5a6fd8;
 }
 
-/* Página 404 */
+
 .not-found-page {
   display: flex;
   justify-content: center;
@@ -1134,7 +1132,7 @@ button[type="submit"]:hover {
   transform: translateY(-2px);
 }
 
-/* Estilos para el botón del carrito */
+
 .cart-button {
   position: relative;
   border-radius: 25px !important;
@@ -1158,7 +1156,7 @@ button[type="submit"]:hover {
   100% { transform: scale(1); }
 }
 
-/* Estilos para el botón de wishlist */
+
 .wishlist-button {
   position: relative;
   border-radius: 25px !important;
@@ -1182,7 +1180,7 @@ button[type="submit"]:hover {
   100% { transform: scale(1); }
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -1208,27 +1206,24 @@ button[type="submit"]:hover {
   }
 }
 
-/* ========================================
-   FOOTER STYLES - MINIMALISTA
-   ======================================== */
 
-/* Footer layout */
+
 footer {
   margin-top: auto;
   background: #343a40 !important;
   border-top: 1px solid #495057;
-  color: #f8f9fa !important; /* Color más claro para el texto base */
+  color: #f8f9fa !important; 
 }
 
-/* Footer text colors */
+
 footer .text-muted {
-  color: #dee2e6 !important; /* Cambiar de gris oscuro a gris claro */
+  color: #dee2e6 !important; 
 }
 
 .footer-link {
   transition: color 0.3s ease;
   font-size: 0.9rem;
-  color: #e9ecef !important; /* Color más claro para los enlaces */
+  color: #e9ecef !important; 
 }
 
 .footer-link:hover {
@@ -1236,7 +1231,7 @@ footer .text-muted {
   text-decoration: none;
 }
 
-/* Social Media Buttons - Minimalista */
+
 .social-btn-simple {
   width: 32px;
   height: 32px;
@@ -1247,7 +1242,7 @@ footer .text-muted {
   transition: all 0.3s ease;
   border: 1px solid #6c757d;
   padding: 0;
-  color: #e9ecef !important; /* Color más claro para los iconos */
+  color: #e9ecef !important; 
 }
 
 .social-btn-simple:hover {
@@ -1257,19 +1252,19 @@ footer .text-muted {
   transform: translateY(-1px);
 }
 
-/* Footer brand styling */
+
 footer .brand-logo {
   font-size: 1.2rem !important;
   font-weight: bold !important;
   color: #FFD700 !important;
 }
 
-/* Separador más claro */
+
 footer .text-muted:not(.footer-link) {
-  color: #adb5bd !important; /* Color más claro para separadores y copyright */
+  color: #adb5bd !important; 
 }
 
-/* Layout adjustments para asegurar que el footer esté en la parte inferior */
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -1280,7 +1275,7 @@ footer .text-muted:not(.footer-link) {
   flex: 1;
 }
 
-/* Footer responsive adjustments */
+
 @media (max-width: 768px) {
   footer .d-flex {
     flex-direction: column;
@@ -1297,9 +1292,6 @@ footer .text-muted:not(.footer-link) {
   }
 }
 
-/* ========================================
-   GAMES CAROUSEL STYLES
-   ======================================== */
 
 .games-carousel {
   background: white;
@@ -1435,7 +1427,7 @@ footer .text-muted:not(.footer-link) {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* CTA Section */
+
 .cta-section {
   border: 2px dashed #667eea;
   transition: all 0.3s ease;
@@ -1447,7 +1439,7 @@ footer .text-muted:not(.footer-link) {
   transform: translateY(-2px);
 }
 
-/* Responsive adjustments for carousel */
+
 @media (max-width: 768px) {
   .carousel-game-card {
     min-height: auto;

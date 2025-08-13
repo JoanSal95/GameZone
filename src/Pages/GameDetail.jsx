@@ -87,7 +87,7 @@ const GameDetail = () => {
 
   return (
     <Container className="py-4">
-      {/* Back Button */}
+      {}
       <Row className="mb-4">
         <Col>
           <Button as={Link} to="/games" variant="outline-primary">
@@ -96,17 +96,17 @@ const GameDetail = () => {
         </Col>
       </Row>
 
-      {/* Game Header */}
+      {}
       <Row className="mb-4">
         <Col lg={6}>
           <Card className="border-0 shadow">
             <Card.Img 
               variant="top"
-              src={game.background_image || 'https://via.placeholder.com/600x400?text=No+Image'} 
+              src={game.background_image || 'https://via.placeholder.com/600x400?text=Game+Image'}
               alt={game.name}
               style={{ height: '400px', objectFit: 'cover' }}
               onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/600x400?text=No+Image'
+                e.target.src = 'https://via.placeholder.com/600x400?text=Image+Not+Found'
               }}
             />
           </Card>
@@ -119,7 +119,7 @@ const GameDetail = () => {
                 {game.name}
               </Card.Title>
               
-              {/* Rating Section */}
+              {}
               <div className="d-flex align-items-center mb-3">
                 <Badge 
                   bg="success" 
@@ -133,7 +133,7 @@ const GameDetail = () => {
                 </span>
               </div>
 
-              {/* Precio prominente */}
+              {}
               <div className="mb-4 p-3 bg-light rounded">
                 <div className="d-flex align-items-center justify-content-between">
                   <div>
@@ -160,7 +160,7 @@ const GameDetail = () => {
                 </div>
               </div>
 
-              {/* Meta Information */}
+              {}
               <div className="mb-3">
                 <strong className="text-primary">Fecha de lanzamiento:</strong> 
                 <span className="ms-2">{formatReleaseDate(game.released)}</span>
@@ -180,7 +180,7 @@ const GameDetail = () => {
                 </div>
               )}
 
-              {/* Genres */}
+              {}
               {game.genres && game.genres.length > 0 && (
                 <div className="mb-3">
                   <strong className="text-primary d-block mb-2">Géneros:</strong>
@@ -192,7 +192,7 @@ const GameDetail = () => {
                 </div>
               )}
 
-              {/* Platforms */}
+              {}
               {game.platforms && game.platforms.length > 0 && (
                 <div className="mb-3">
                   <strong className="text-primary d-block mb-2">Plataformas:</strong>
@@ -204,7 +204,7 @@ const GameDetail = () => {
                 </div>
               )}
 
-              {/* Website Link */}
+              {}
               {game.website && (
                 <div className="mt-4">
                   <Button 
@@ -222,7 +222,7 @@ const GameDetail = () => {
         </Col>
       </Row>
 
-      {/* Description */}
+      {}
       {game.description_raw && (
         <Row className="mb-4">
           <Col>
@@ -240,7 +240,7 @@ const GameDetail = () => {
         </Row>
       )}
 
-      {/* Screenshots */}
+      {}
       {game.screenshots && game.screenshots.length > 0 && (
         <Row className="mb-4">
           <Col>
@@ -275,7 +275,7 @@ const GameDetail = () => {
         </Row>
       )}
 
-      {/* Tags */}
+      {}
       {game.tags && game.tags.length > 0 && (
         <Row className="mb-4">
           <Col>
@@ -295,7 +295,7 @@ const GameDetail = () => {
         </Row>
       )}
 
-      {/* Toast de confirmación */}
+      {}
       <ToastContainer position="bottom-end" className="p-3">
         <Toast 
           bg="success" 

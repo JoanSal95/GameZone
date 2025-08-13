@@ -7,7 +7,6 @@ const Footer = () => {
     <footer className="bg-dark text-light py-4 mt-5">
       <Container>
         <Row className="align-items-center">
-          {/* Logo y copyright */}
           <Col md={6} className="mb-3 mb-md-0">
             <div className="d-flex align-items-center">
               <h5 className="brand-logo text-warning mb-0 me-3">
@@ -19,10 +18,8 @@ const Footer = () => {
             </div>
           </Col>
 
-          {/* Enlaces y redes sociales */}
           <Col md={6}>
             <div className="d-flex justify-content-md-end justify-content-center align-items-center gap-3">
-              {/* Enlaces rápidos */}
               <Link to="/about" className="text-muted text-decoration-none footer-link">
                 Acerca de
               </Link>
@@ -30,16 +27,15 @@ const Footer = () => {
                 Contacto
               </Link>
               
-              {/* Separador */}
               <span className="text-muted">|</span>
               
-              {/* Redes sociales */}
               <div className="d-flex gap-2">
                 <Button
+                  as="a"
                   variant="outline-light"
                   size="sm"
                   className="social-btn-simple"
-                  href="https://facebook.com/gamezone"
+                  href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Facebook"
@@ -50,10 +46,11 @@ const Footer = () => {
                 </Button>
 
                 <Button
+                  as="a"
                   variant="outline-light"
                   size="sm"
                   className="social-btn-simple"
-                  href="https://instagram.com/gamezone"
+                  href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Instagram"
@@ -64,10 +61,11 @@ const Footer = () => {
                 </Button>
 
                 <Button
+                  as="a"
                   variant="outline-light"
                   size="sm"
                   className="social-btn-simple"
-                  href="https://wa.me/15551234567"
+                  href="https://wa.me/1234567890"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="WhatsApp"

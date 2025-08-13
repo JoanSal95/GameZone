@@ -25,11 +25,9 @@ const Home = () => {
       try {
         setLoading(true)
         const games = await gamesAPI.getPopularGames()
-        // Seleccionar los 5 juegos más relevantes (mayor rating y popularidad)
         const sortedGames = games
           .filter(game => game.rating && game.ratings_count)
           .sort((a, b) => {
-            // Combinar rating y popularidad para determinar relevancia
             const scoreA = (a.rating || 0) * Math.log(a.ratings_count || 1)
             const scoreB = (b.rating || 0) * Math.log(b.ratings_count || 1)
             return scoreB - scoreA
@@ -51,7 +49,7 @@ const Home = () => {
 
   return (
     <Container fluid className="home-page">
-      {/* Hero Section */}
+      {}
       <Row className="hero-section text-center text-white py-5 mb-5">
         <Col>
           <h1 className="display-4 fw-bold mb-3">¡Bienvenido a GameZone!</h1>
@@ -63,7 +61,7 @@ const Home = () => {
       </Row>
 
       <Container>
-        {/* Featured Games Carousel Section */}
+        {}
         <Row className="mb-5">
           <Col>
             <h2 className="text-center mb-4">🌟 Juegos Más Relevantes</h2>
@@ -88,7 +86,7 @@ const Home = () => {
           </Row>
         ) : (
           <>
-            {/* Games Carousel */}
+            {}
             <Row className="justify-content-center mb-5">
               <Col lg={10} xl={8}>
                 <Carousel 
@@ -104,11 +102,11 @@ const Home = () => {
                           <Col md={6}>
                             <div className="carousel-image-container">
                               <img
-                                src={game.background_image || 'https://via.placeholder.com/600x400?text=No+Image'}
+                                src={game.background_image || 'https://via.placeholder.com/600x400?text=Game+Image'}
                                 alt={game.name}
                                 className="carousel-image"
                                 onError={(e) => {
-                                  e.target.src = 'https://via.placeholder.com/600x400?text=No+Image'
+                                  e.target.src = 'https://via.placeholder.com/600x400?text=Image+Not+Found'
                                 }}
                               />
                               <div className="carousel-overlay">
@@ -139,19 +137,19 @@ const Home = () => {
                                 {game.genres?.slice(0, 3).map(genre => genre.name).join(' • ') || 'Género no disponible'}
                               </p>
                               
-                              {/* Precio destacado */}
+                              {}
                               <div className="price-section mb-4">
                                 <PriceTag game={game} size="large" />
                               </div>
                               
-                              {/* Descripción breve */}
+                              {}
                               {game.description_raw && (
                                 <p className="game-description text-muted mb-4">
                                   {game.description_raw.substring(0, 150)}...
                                 </p>
                               )}
                               
-                              {/* Action buttons */}
+                              {}
                               <div className="carousel-actions d-flex gap-3">
                                 <Button 
                                   as={Link} 
@@ -181,7 +179,7 @@ const Home = () => {
               </Col>
             </Row>
             
-            {/* Call to action */}
+            {}
             <Row className="text-center mt-5">
               <Col>
                 <div className="cta-section p-4 bg-light rounded">
@@ -196,7 +194,7 @@ const Home = () => {
         )}
       </Container>
 
-      {/* Toast de confirmación */}
+      {}
       <ToastContainer position="bottom-end" className="p-3">
         <Toast 
           bg="success" 

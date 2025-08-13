@@ -13,7 +13,7 @@ export const useWishlist = () => {
 export const WishlistProvider = ({ children }) => {
   const [wishlistItems, setWishlistItems] = useState([])
 
-  // Cargar wishlist desde localStorage al inicializar
+  
   useEffect(() => {
     const savedWishlist = localStorage.getItem('gamezone-wishlist')
     if (savedWishlist) {
@@ -26,7 +26,7 @@ export const WishlistProvider = ({ children }) => {
     }
   }, [])
 
-  // Guardar wishlist en localStorage cuando cambie
+  
   useEffect(() => {
     localStorage.setItem('gamezone-wishlist', JSON.stringify(wishlistItems))
   }, [wishlistItems])
@@ -35,7 +35,7 @@ export const WishlistProvider = ({ children }) => {
     setWishlistItems(prev => {
       const exists = prev.find(item => item.id === game.id)
       if (exists) {
-        return prev // Ya está en la lista
+        return prev 
       }
       return [...prev, game]
     })

@@ -16,7 +16,7 @@ const ShoppingCart = ({ show, handleClose }) => {
 
   const handleCheckout = () => {
     alert('¡Funcionalidad de checkout en desarrollo! 🚀')
-    // Aquí iría la lógica de checkout real
+    
   }
 
   return (
@@ -45,7 +45,7 @@ const ShoppingCart = ({ show, handleClose }) => {
           </div>
         ) : (
           <>
-            {/* Lista de productos */}
+            {}
             <div className="cart-items flex-grow-1" style={{ maxHeight: 'calc(100vh - 200px)', overflowY: 'auto' }}>
               <ListGroup variant="flush">
                 {cartItems.map((item) => (
@@ -53,7 +53,7 @@ const ShoppingCart = ({ show, handleClose }) => {
                     <Row className="align-items-center">
                       <Col xs={3}>
                         <img 
-                          src={item.game.background_image || 'https://via.placeholder.com/80x60?text=No+Image'} 
+                          src={item.game.background_image || 'https://via.placeholder.com/300x200?text=Game+Image'}
                           alt={item.game.name}
                           className="img-fluid rounded"
                           style={{ height: '60px', objectFit: 'cover' }}
@@ -69,7 +69,7 @@ const ShoppingCart = ({ show, handleClose }) => {
                               <PriceTag game={item.game} size="small" />
                             </div>
                             
-                            {/* Controles de cantidad */}
+                            {}
                             <div className="d-flex align-items-center">
                               <Button 
                                 variant="outline-secondary" 
@@ -107,10 +107,10 @@ const ShoppingCart = ({ show, handleClose }) => {
               </ListGroup>
             </div>
 
-            {/* Resumen y checkout */}
+            {}
             <Card className="border-0 border-top rounded-0">
               <Card.Body className="p-3">
-                {/* Botón limpiar carrito */}
+                {}
                 <div className="d-flex justify-content-between align-items-center mb-3">
                   <Button 
                     variant="outline-warning" 
@@ -124,7 +124,7 @@ const ShoppingCart = ({ show, handleClose }) => {
                   </small>
                 </div>
 
-                {/* Total */}
+                {}
                 <div className="d-flex justify-content-between align-items-center mb-3 p-2 bg-light rounded">
                   <h5 className="mb-0">Total:</h5>
                   <h4 className="mb-0 text-primary fw-bold">
@@ -132,7 +132,7 @@ const ShoppingCart = ({ show, handleClose }) => {
                   </h4>
                 </div>
 
-                {/* Botones de acción */}
+                {}
                 <div className="d-grid gap-2">
                   <Button 
                     variant="success" 

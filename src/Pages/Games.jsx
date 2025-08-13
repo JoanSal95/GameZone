@@ -40,7 +40,6 @@ const Games = () => {
     setShowToast(true)
   }
 
-  // Función para ordenar juegos
   const sortGames = (gamesArray, sortBy) => {
     const sortedGames = [...gamesArray]
     
@@ -55,14 +54,14 @@ const Games = () => {
         return sortedGames.sort((a, b) => {
           const dateA = a.released ? new Date(a.released) : new Date(0)
           const dateB = b.released ? new Date(b.released) : new Date(0)
-          return dateB - dateA // Más recientes primero
+          return dateB - dateA
         })
       
       case 'release-date-asc':
         return sortedGames.sort((a, b) => {
           const dateA = a.released ? new Date(a.released) : new Date(0)
           const dateB = b.released ? new Date(b.released) : new Date(0)
-          return dateA - dateB // Más antiguos primero
+          return dateA - dateB
         })
       
       case 'rating':
@@ -70,7 +69,6 @@ const Games = () => {
       
       case 'relevance':
       default:
-        // Ordenar por relevancia (rating * popularidad)
         return sortedGames.sort((a, b) => {
           const scoreA = (a.rating || 0) * Math.log((a.ratings_count || 1) + 1)
           const scoreB = (b.rating || 0) * Math.log((b.ratings_count || 1) + 1)
@@ -79,7 +77,6 @@ const Games = () => {
     }
   }
 
-  // Manejar cambio de ordenamiento
   const handleSortChange = (newSortOption) => {
     setSortOption(newSortOption)
     if (games.length > 0) {
@@ -88,11 +85,9 @@ const Games = () => {
     }
   }
 
-  // Manejar cambio de página
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage)
     fetchGames(newPage)
-    // Scroll al inicio de la página
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -101,7 +96,6 @@ const Games = () => {
     setCurrentPage(1)
   }, [])
 
-  // Efecto para aplicar ordenamiento cuando cambie la opción
   useEffect(() => {
     if (games.length > 0) {
       const sortedGames = sortGames(games, sortOption)
@@ -163,7 +157,6 @@ const Games = () => {
 
   return (
     <Container className="games-page py-4">
-      {/* Header */}
       <Row className="text-center mb-4">
         <Col>
           <h1 className="display-4 text-primary">Catálogo de Juegos</h1>
@@ -171,7 +164,6 @@ const Games = () => {
         </Col>
       </Row>
 
-      {/* Search Section */}
       <Row className="justify-content-center mb-4">
         <Col lg={8}>
           <Form onSubmit={handleSearch}>
@@ -199,7 +191,6 @@ const Games = () => {
         </Col>
       </Row>
 
-      {/* Sort Section */}
       <Row className="justify-content-center mb-4">
         <Col lg={8}>
           <div className="sort-section">
@@ -228,7 +219,6 @@ const Games = () => {
         </Col>
       </Row>
 
-      {/* Games Info */}
       <Row className="mb-3">
         <Col>
           <p className="text-muted text-center">
@@ -261,7 +251,6 @@ const Games = () => {
         </Row>
       ) : (
         <>
-          {/* Games Grid */}
           <Row>
             {games.map((game) => (
               <Col lg={4} md={6} key={game.id} className="mb-4">
@@ -269,16 +258,15 @@ const Games = () => {
                   <div className="position-relative">
                     <Card.Img 
                       variant="top" 
-                      src={game.background_image || 'https://via.placeholder.com/300x200?text=No+Image'} 
+                      src={game.background_image || 'https://via.placeholder.com/400x200?text=Game+Image'}
                       alt={game.name}
                       style={{ height: '200px', objectFit: 'cover' }}
                       loading="lazy"
                       onError={(e) => {
-                        e.target.src = 'https://via.placeholder.com/300x200?text=No+Image'
+                        e.target.src = 'https://via.placeholder.com/400x200?text=Image+Not+Found'
                       }}
                     />
                     
-                    {/* Rating Badge */}
                     <div className="position-absolute top-0 end-0 m-2">
                       <Badge 
                         bg="success"
@@ -301,7 +289,6 @@ const Games = () => {
                       </small>
                     </div>
 
-                    {/* Precio del juego */}
                     <div className="mb-2">
                       <PriceTag game={game} size="normal" />
                     </div>
@@ -310,7 +297,6 @@ const Games = () => {
                       <strong>Lanzado:</strong> {formatReleaseDate(game.released)}
                     </Card.Text>
                     
-                    {/* Botones de acción */}
                     <div className="mt-auto d-flex gap-2">
                       <Button 
                         as={Link} 
@@ -346,7 +332,6 @@ const Games = () => {
             ))}
           </Row>
 
-          {/* Pagination Controls */}
           {!isSearching && (
             <Row className="justify-content-center mt-5">
               <Col xs="auto">
@@ -360,21 +345,18 @@ const Games = () => {
                     disabled={!hasPrevious}
                   />
                   
-                  {/* Páginas visibles */}
                   {(() => {
-                    const totalPages = Math.ceil(totalCount / 12) // 12 juegos por página
+                    const totalPages = Math.ceil(totalCount / 12) 
                     const maxVisiblePages = 5
                     let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2))
                     let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1)
                     
-                    // Ajustar el inicio si estamos cerca del final
                     if (endPage - startPage < maxVisiblePages - 1) {
                       startPage = Math.max(1, endPage - maxVisiblePages + 1)
                     }
                     
                     const pages = []
                     
-                    // Mostrar primera página si no está visible
                     if (startPage > 1) {
                       pages.push(
                         <Pagination.Item key={1} onClick={() => handlePageChange(1)}>
@@ -386,7 +368,6 @@ const Games = () => {
                       }
                     }
                     
-                    // Páginas del rango visible
                     for (let i = startPage; i <= endPage; i++) {
                       pages.push(
                         <Pagination.Item 
@@ -399,7 +380,6 @@ const Games = () => {
                       )
                     }
                     
-                    // Mostrar última página si no está visible
                     if (endPage < totalPages) {
                       if (endPage < totalPages - 1) {
                         pages.push(<Pagination.Ellipsis key="end-ellipsis" />)
@@ -427,7 +407,6 @@ const Games = () => {
             </Row>
           )}
 
-          {/* Información de paginación */}
           {!isSearching && (
             <Row className="justify-content-center mt-3">
               <Col xs="auto">
@@ -441,7 +420,6 @@ const Games = () => {
         </>
       )}
 
-      {/* Toast de confirmación */}
       <ToastContainer position="bottom-end" className="p-3">
         <Toast 
           bg="success" 

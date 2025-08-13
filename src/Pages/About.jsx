@@ -7,7 +7,7 @@ const About = () => {
     <Container className="py-5">
       <Row className="justify-content-center">
         <Col lg={10}>
-          {/* Hero Section */}
+          {}
           <div className="text-center mb-5">
             <h1 className="display-4 mb-3" style={{ 
               background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
@@ -23,9 +23,9 @@ const About = () => {
             </p>
           </div>
 
-          {/* Main Content */}
+          {}
           <Row className="g-4">
-            {/* Descripción Principal */}
+            {}
             <Col lg={8}>
               <Card className="shadow border-0 h-100">
                 <Card.Body className="p-4">
@@ -48,7 +48,7 @@ const About = () => {
               </Card>
             </Col>
 
-            {/* Estadísticas */}
+            {}
             <Col lg={4}>
               <Card className="shadow border-0 h-100 bg-primary text-white">
                 <Card.Body className="p-4 text-center">
@@ -74,7 +74,7 @@ const About = () => {
             </Col>
           </Row>
 
-          {/* Características Principales */}
+          {}
           <Row className="mt-5">
             <Col>
               <Card className="shadow border-0">
@@ -135,7 +135,7 @@ const About = () => {
             </Col>
           </Row>
 
-          {/* Tecnologías Utilizadas */}
+          {}
           <Row className="mt-5">
             <Col>
               <Card className="shadow border-0">
@@ -176,7 +176,7 @@ const About = () => {
             </Col>
           </Row>
 
-          {/* Call to Action */}
+          {}
           <Row className="mt-5">
             <Col>
               <Card className="bg-gradient text-white border-0" style={{

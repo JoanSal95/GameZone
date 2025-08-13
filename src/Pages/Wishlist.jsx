@@ -71,7 +71,7 @@ const Wishlist = () => {
         )}
       </div>
 
-      {/* Botón limpiar lista en móvil */}
+      {}
       {wishlistItems.length > 0 && (
         <div className="d-md-none mb-3">
           <Button 
@@ -97,7 +97,7 @@ const Wishlist = () => {
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
                 
-                {/* Overlay con botones */}
+                {}
                 <div className="game-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                   <div className="d-flex gap-2">
                     <Button 
@@ -124,7 +124,7 @@ const Wishlist = () => {
                   {game.name}
                 </Card.Title>
 
-                {/* Géneros */}
+                {}
                 {game.genres && game.genres.length > 0 && (
                   <div className="mb-2">
                     <small className="text-muted">
@@ -133,7 +133,7 @@ const Wishlist = () => {
                   </div>
                 )}
 
-                {/* Rating */}
+                {}
                 {game.rating && (
                   <div className="mb-2">
                     <span className={`badge ${
@@ -146,12 +146,12 @@ const Wishlist = () => {
                   </div>
                 )}
 
-                {/* Precio */}
+                {}
                 <div className="mb-3">
                   <PriceTag game={game} size="small" />
                 </div>
 
-                {/* Botones de acción */}
+                {}
                 <div className="mt-auto d-flex flex-column gap-2">
                   <Button 
                     variant="success" 
@@ -187,7 +187,7 @@ const Wishlist = () => {
         ))}
       </Row>
 
-      {/* Call to action */}
+      {}
       <div className="text-center mt-5 py-4">
         <h3 className="mb-3">¿Buscas más juegos?</h3>
         <p className="text-muted mb-4">Explora nuestro catálogo completo y encuentra tu próximo juego favorito</p>
