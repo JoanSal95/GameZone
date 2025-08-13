@@ -21,8 +21,54 @@ const Navigation = () => {
           <Navbar.Brand as={Link} to="/" className="brand-logo">
             🎮 GameZone
           </Navbar.Brand>
+
+          <div className="d-flex d-lg-none align-items-center gap-2">
+            <Button 
+              as={Link}
+              to="/wishlist"
+              variant="outline-light" 
+              size="sm"
+              className="position-relative wishlist-button"
+            >
+              💝
+              {getWishlistItemsCount() > 0 && (
+                <Badge 
+                  bg="danger" 
+                  pill 
+                  className="position-absolute top-0 start-100 translate-middle"
+                  style={{ fontSize: '0.6rem' }}
+                >
+                  {getWishlistItemsCount()}
+                </Badge>
+              )}
+            </Button>
+
+            <Button 
+              variant="outline-warning" 
+              size="sm"
+              onClick={handleCartToggle}
+              className="position-relative cart-button me-2"
+            >
+              🛒
+              {getCartItemsCount() > 0 && (
+                <Badge 
+                  bg="danger" 
+                  pill 
+                  className="position-absolute top-0 start-100 translate-middle"
+                  style={{ fontSize: '0.6rem' }}
+                >
+                  {getCartItemsCount()}
+                </Badge>
+              )}
+            </Button>
+
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          </div>
+
+          <div className="d-none d-lg-block">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          </div>
           
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link 
@@ -30,34 +76,32 @@ const Navigation = () => {
                 to="/" 
                 className={location.pathname === '/' ? 'active' : ''}
               >
-                Inicio
+                🏠 Inicio
               </Nav.Link>
               <Nav.Link 
                 as={Link} 
                 to="/games" 
                 className={location.pathname === '/games' ? 'active' : ''}
               >
-                Juegos
+                🎮 Juegos
               </Nav.Link>
               <Nav.Link 
                 as={Link} 
                 to="/about" 
                 className={location.pathname === '/about' ? 'active' : ''}
               >
-                Acerca de
+                ℹ️ Acerca de
               </Nav.Link>
             </Nav>
-            
-            {}
-            <div className="d-flex gap-2">
-              {}
+
+            <div className="d-none d-lg-flex gap-2">
               <Button 
                 as={Link}
                 to="/wishlist"
                 variant="outline-light" 
                 className="position-relative wishlist-button"
               >
-                💝 Lista
+                💝 Lista de Deseos
                 {getWishlistItemsCount() > 0 && (
                   <Badge 
                     bg="danger" 
@@ -69,7 +113,6 @@ const Navigation = () => {
                 )}
               </Button>
 
-              {}
               <Button 
                 variant="outline-warning" 
                 onClick={handleCartToggle}
@@ -91,7 +134,6 @@ const Navigation = () => {
         </Container>
       </Navbar>
 
-      {}
       <ShoppingCart show={showCart} handleClose={handleCartClose} />
     </>
   )
